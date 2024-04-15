@@ -1,0 +1,38 @@
+[
+  {
+    "description": "Crafted from organic cotton and bamboo, this luxurious blanket offers unparalleled comfort and breathability. Perfect for cozy nights in or outdoor adventures.",
+    "id": "7567ec4b-b10c-48c5-9345-fc73c48a80aa",
+    "price": 49,
+    "title": "Organic Cotton & Bamboo Blanket"
+  },
+  {
+    "description": "Elevate your skincare routine with this rejuvenating serum infused with rare botanical extracts. Nourish your skin and restore its natural radiance.",
+    "id": "7567ec4b-b10c-48c5-9345-fc73c48a80a1",
+    "price": 79,
+    "title": "Botanical Rejuvenating Serum"
+  },
+  {
+    "description": "Immerse yourself in the rich aroma of freshly ground coffee beans with our premium blend. Sourced from sustainable farms, every cup supports ethical farming practices.",
+    "id": "7567ec4b-b10c-48c5-9345-fc73c48a80a3",
+    "price": 15,
+    "title": "Sustainable Coffee Blend"
+  },
+  {
+    "description": "Unwind after a long day with our soothing lavender-scented candle. Made from 100% natural soy wax, it creates a serene ambiance wherever you go.",
+    "id": "7567ec4b-b10c-48c5-9345-fc73348a80a1",
+    "price": 29,
+    "title": "Lavender Soy Wax Candle"
+  },
+  {
+    "description": "Indulge in the decadent taste of our artisanal dark chocolate. Handcrafted with premium cocoa beans, each bite is a symphony of rich flavors.",
+    "id": "7567ec4b-b10c-48c5-9445-fc73c48a80a2",
+    "price": 12,
+    "title": "Artisanal Dark Chocolate"
+  },
+  {
+    "description": "Experience ultimate comfort with our memory foam pillow. Designed to provide optimal support for your neck and shoulders, it ensures a restful night's sleep.",
+    "id": "7567ec4b-b10c-45c5-9345-fc73c48a80a1",
+    "price": 39,
+    "title": "Memory Foam Pillow"
+  }
+]
