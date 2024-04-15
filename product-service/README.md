@@ -1,7 +1,10 @@
 # Serverless - AWS Node.js Typescript
 
-- [Swagger](https://ht9wjv9ht5.execute-api.eu-central-1.amazonaws.com/dev/swagger)
-- 
+GET - https://ht9wjv9ht5.execute-api.eu-central-1.amazonaws.com/dev/products
+GET - https://ht9wjv9ht5.execute-api.eu-central-1.amazonaws.com/dev/products/{productId}
+POST - https://ht9wjv9ht5.execute-api.eu-central-1.amazonaws.com/dev/products
+GET - https://ht9wjv9ht5.execute-api.eu-central-1.amazonaws.com/dev/swagger
+GET - https://ht9wjv9ht5.execute-api.eu-central-1.amazonaws.com/dev/swagger.json
 
 This project has been generated using the `aws-nodejs-typescript` template from the [Serverless framework](https://www.serverless.com/).
 

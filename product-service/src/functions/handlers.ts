@@ -1,9 +1,14 @@
-import { middyfy } from '@libs/lambda';
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { getProductsByIdHandler } from '@functions/getProductsById/handler';
 import { getProductsListHandler } from '@functions/getProductsList/handler';
-import { ProductService } from '../services/product-service';
+import { createProductHandler } from '@functions/createProduct/handler';
+import { Product } from '../services/product';
+import { StockService } from '../services/stock';
 
-const productService = new ProductService()
+const client = new DynamoDBClient();
+export const productService = new Product(client);
+export const stockService = new StockService(client);
 
-export const getProductsById = middyfy(getProductsByIdHandler(productService));
-export const getProductsList = middyfy(getProductsListHandler(productService));
+export const getProductsById = getProductsByIdHandler(productService);
+export const getProductsList = getProductsListHandler(productService);
+export const createProduct = createProductHandler(productService);

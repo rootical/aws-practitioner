@@ -1,0 +1,34 @@
+[
+  {
+    "productId": "1",
+    "count": 10
+  },
+  {
+    "productId": "2",
+    "count": 32
+  },
+  {
+    "productId": "3",
+    "count": 33
+  },
+  {
+    "productId": "4",
+    "count": 14
+  },
+  {
+    "productId": "5",
+    "count": 14
+  },
+  {
+    "productId": "6",
+    "count": 1
+  },
+  {
+    "productId": "7",
+    "count": 0
+  },
+  {
+    "productId": "8",
+    "count": 5
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "Soft Fleece Blanket",
+    "description": "Stay warm and cozy with our soft fleece blanket. Made from high-quality fleece material, this blanket is perfect for snuggling up on the couch or adding an extra layer of warmth to your bed.",
+    "price": 29.99
+  },
+  {
+    "id": "2",
+    "title": "Plush Sherpa Blanket",
+    "description": "Wrap yourself in luxury with our plush sherpa blanket. Featuring a reversible design with velvety soft sherpa on one side and smooth microfiber on the other, this blanket provides ultimate comfort and warmth.",
+    "price": 39.99
+  },
+  {
+    "id": "3",
+    "title": "Chunky Knit Throw Blanket",
+    "description": "Add a touch of texture to your living space with our chunky knit throw blanket. Handcrafted from premium yarn, this blanket boasts a cozy yet stylish design that complements any decor.",
+    "price": 49.99
+  },
+  {
+    "id": "4",
+    "title": "Wool Blend Blanket",
+    "description": "Experience the warmth and durability of our wool blend blanket. Made from a blend of wool and synthetic fibers, this blanket is perfect for chilly nights and outdoor adventures.",
+    "price": 59.99
+  },
+  {
+    "id": "5",
+    "title": "Quilted Down Blanket",
+    "description": "Indulge in luxury with our quilted down blanket. Filled with premium down feathers and encased in soft cotton, this blanket offers lightweight warmth and superior comfort.",
+    "price": 79.99
+  },
+  {
+    "id": "6",
+    "title": "Electric Heated Blanket",
+    "description": "Stay warm all winter long with our electric heated blanket. Featuring customizable heat settings and automatic shut-off, this blanket provides soothing warmth whenever you need it.",
+    "price": 89.99
+  },
+  {
+    "id": "7",
+    "title": "Weighted Anxiety Blanket",
+    "description": "Relieve stress and anxiety with our weighted blanket. Designed to provide gentle pressure stimulation, this blanket promotes relaxation and restful sleep for a rejuvenated mind and body.",
+    "price": 99.99
+  },
+  {
+    "id": "8",
+    "title": "Silk Throw Blanket",
+    "description": "Add a touch of elegance to your home with our silk throw blanket. Crafted from luxurious silk fabric, this lightweight yet sumptuous blanket is perfect for draping over your furniture or cuddling up with on cool evenings.",
+    "price": 109.99
+  }
+]
