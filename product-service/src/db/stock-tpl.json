@@ -1,0 +1,16 @@
+{
+  "TableName": "stock",
+  "KeySchema": [
+    {
+      "KeyType": "HASH",
+      "AttributeName": "productId"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "productId",
+      "AttributeType": "S"
+    }
+  ],
+  "BillingMode": "PAY_PER_REQUEST"
+}

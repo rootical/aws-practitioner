@@ -23,6 +23,23 @@
             "description": "200 response"
           }
         }
+      },
+      "post": {
+        "summary": "createProduct",
+        "description": "",
+        "operationId": "createProduct.post.products",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "200 response"
+          }
+        }
       }
     },
     "/products/{productId}": {
@@ -82,6 +99,25 @@
       "title": "ProductInterface",
       "type": "object"
     },
+    "StockInterface": {
+      "properties": {
+        "productId": {
+          "$ref": "#/definitions/AttributeValue",
+          "title": "StockInterface.productId"
+        },
+        "count": {
+          "$ref": "#/definitions/AttributeValue",
+          "title": "StockInterface.count"
+        }
+      },
+      "required": [
+        "productId",
+        "count"
+      ],
+      "additionalProperties": false,
+      "title": "StockInterface",
+      "type": "object"
+    },
     "ProductServiceInterface": {
       "properties": {
         "getProductById": {
@@ -89,14 +125,39 @@
         },
         "getAllProducts": {
           "title": "ProductServiceInterface.getAllProducts"
+        },
+        "createProduct": {
+          "title": "ProductServiceInterface.createProduct"
         }
       },
       "required": [
         "getProductById",
-        "getAllProducts"
+        "getAllProducts",
+        "createProduct"
       ],
       "additionalProperties": false,
       "title": "ProductServiceInterface",
+      "type": "object"
+    },
+    "StockServiceInterface": {
+      "properties": {
+        "getCreateStockTranskItem": {
+          "title": "StockServiceInterface.getCreateStockTranskItem"
+        },
+        "getStockByProductId": {
+          "title": "StockServiceInterface.getStockByProductId"
+        },
+        "getStock": {
+          "title": "StockServiceInterface.getStock"
+        }
+      },
+      "required": [
+        "getCreateStockTranskItem",
+        "getStockByProductId",
+        "getStock"
+      ],
+      "additionalProperties": false,
+      "title": "StockServiceInterface",
       "type": "object"
     }
   },

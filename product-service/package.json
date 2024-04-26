@@ -4,15 +4,20 @@
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create-db-tables": "aws dynamodb create-table --cli-input-json file://src/db/products-tpl.json --region eu-central-1 && aws dynamodb create-table --cli-input-json file://src/db/stock-tpl.json --region eu-central-1",
+    "fill-db": "node ./src/db/fill.js"
   },
   "engines": {
     "node": ">=14.15.0"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.554.0",
     "@aws-sdk/client-s3": "^3.540.0",
+    "@aws-sdk/lib-dynamodb": "^3.554.0",
     "@middy/core": "^3.4.0",
     "@middy/http-json-body-parser": "^3.4.0",
+    "uuid": "^9.0.1",
     "winston": "^3.13.0"
   },
   "devDependencies": {
