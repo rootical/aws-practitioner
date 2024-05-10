@@ -1,13 +1,18 @@
-import { handlerPath } from '@libs/handler-resolver';
+import { handlerPath } from "@libs/handler-resolver";
 
 export default {
     handler: `${handlerPath(__dirname)}/handler.main`,
     events: [
         {
-            http: {
-                method: 'get',
-                path: 'import',
-                cors: true,
+            s3: {
+                bucket: "file-parcer-shop-stuff",
+                event: "s3:ObjectCreated:*",
+                existing: true,
+                forceDeploy: true,
+                rules: [
+                    { prefix: 'uploads/' },
+                    { suffix: '.csv' }
+                ]
             },
         },
     ],

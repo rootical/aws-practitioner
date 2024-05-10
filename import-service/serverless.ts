@@ -12,7 +12,6 @@ const serverlessConfiguration: AWS = {
     name: 'aws',
     runtime: 'nodejs20.x',
     region: 'eu-central-1',
-    profile: 'rootical',
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
@@ -27,10 +26,26 @@ const serverlessConfiguration: AWS = {
           {
             Effect: "Allow",
             Action: [
-              's3:*',
-              "logs:*"
+              "s3:PutObject",
+              "s3:PutObjectAcl",
+              "s3:GetObject",
+              "s3:GetObjectAcl",
+              "s3:DeleteObject",
+              "s3:CopyObject",
             ],
-            Resource: [`arn:aws:s3:::file-parcer-shop-stuff/*`, 'arn:aws:logs:*:*:*']
+            Resource: `arn:aws:s3:::file-parcer-shop-stuff`,
+          },
+          {
+            Effect: "Allow",
+            Action: [
+              "s3:*",
+            ],
+            Resource: `arn:aws:s3:::file-parcer-shop-stuff/*`,
+          },
+          {
+            Effect: "Allow",
+            Action: ["sqs:SendMessage", "sqs:GetQueueUrl", "sqs:ListQueues"],
+            Resource: `arn:aws:sqs:eu-central-1:434889505863:catalogItemsQueue`,
           },
         ],
       },
