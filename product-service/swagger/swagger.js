@@ -111,7 +111,6 @@
         }
       },
       "required": [
-        "productId",
         "count"
       ],
       "additionalProperties": false,

@@ -3,6 +3,7 @@ import type {AWS} from '@serverless/typescript';
 import getProductsList from '@functions/getProductsList';
 import getProductsById from '@functions/getProductsById';
 import createProduct from '@functions/createProduct';
+import catalogBatchProcess from '@functions/catalogBatchProcess';
 
 const dynamoDBResources = {
     products: {
@@ -51,6 +52,51 @@ const dynamoDBResources = {
     },
 };
 
+const Queues = {
+    SQSQueue: {
+        Type: "AWS::SQS::Queue",
+        Properties: {
+            QueueName: "catalogItemsQueue",
+        },
+    },
+    SNSTopic: {
+        Type: "AWS::SNS::Topic",
+        Properties: {
+            TopicName: "catalogItemsTopic",
+        },
+    },
+    SNSSubscription: {
+        Type: "AWS::SNS::Subscription",
+        Properties: {
+            Endpoint: "rootical.web@gmail.com",
+            Protocol: "email",
+            TopicArn: {
+                Ref: "SNSTopic",
+            },
+            FilterPolicyScope: "MessageAttributes",
+            FilterPolicy: {
+                price: [{ numeric: ["<", 5] }],
+            },
+        },
+    },
+    SNSSubscription2: {
+        Type: "AWS::SNS::Subscription",
+        Properties: {
+            Endpoint: "vadzim_yakushau@epam.com",
+            Protocol: "email",
+            TopicArn: {
+                Ref: "SNSTopic",
+            },
+            FilterPolicyScope: "MessageAttributes",
+            FilterPolicy: {
+                price: [{ numeric: [">=", 5] }],
+            },
+        },
+    },
+};
+
+const resources = {Resources: {...dynamoDBResources, ...Queues}};
+
 const serverlessConfiguration: AWS = {
     service: 'product-service',
     frameworkVersion: '3',
@@ -66,6 +112,25 @@ const serverlessConfiguration: AWS = {
         environment: {
             AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
             NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
+            SQS_URL: {
+                Ref: 'SQSQueue',
+            },
+            SNS_ARN: {
+                Ref: 'SNSTopic',
+            },
+        },
+        iam: {
+            role: {
+                statements: [
+                    {
+                        Effect: "Allow",
+                        Action: ["sns:*"],
+                        Resource: {
+                            Ref: "SNSTopic",
+                        },
+                    },
+                ],
+            },
         },
         iamRoleStatements: [
             {
@@ -90,6 +155,7 @@ const serverlessConfiguration: AWS = {
         getProductsList,
         getProductsById,
         createProduct,
+        catalogBatchProcess,
     },
     package: {individually: true},
     custom: {
@@ -109,9 +175,7 @@ const serverlessConfiguration: AWS = {
             typefiles: ['./src/services/products.ts'],
         }
     },
-    resources: {
-        Resources: dynamoDBResources
-    }
+    resources,
 };
 
 module.exports = serverlessConfiguration;

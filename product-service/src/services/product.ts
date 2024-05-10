@@ -13,9 +13,9 @@ class Product implements ProductServiceInterface {
     }
 
     getCreateProductTranskItem = (product: ProductInterface): TransactWriteItem => {
-        // @ts-ignore
         return {
             Put: {
+                // @ts-ignore
                 Item: {
                     ...product,
                 },

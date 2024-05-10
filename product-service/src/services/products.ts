@@ -1,4 +1,4 @@
-import { AttributeValue, TransactWriteItem } from "@aws-sdk/client-dynamodb";
+import {AttributeValue, TransactWriteItem} from "@aws-sdk/client-dynamodb";
 export interface ProductInterface {
     id: string;
     title: string
@@ -7,9 +7,10 @@ export interface ProductInterface {
 };
 
 export interface StockInterface {
-    productId: AttributeValue;
+    productId?: AttributeValue;
     count: AttributeValue;
 };
+
 export interface ProductServiceInterface {
     getProductById: (id: string) => Promise<ProductInterface>,
     getAllProducts: () => Promise<ProductInterface[]>,
