@@ -36,22 +36,7 @@ export const catalogBatchProcessHandler = (productService: ProductServiceInterfa
             }));
         }));
         console.log('attempt to publish records to the sns queue');
-        // const productInfo = JSON.parse(Records[0].body);
-        /*await snsClient.send(new PublishCommand({
-          Message: `The following product was successfully added to db:
-            Title: ${productInfo.title}
-            Description: ${productInfo.description}
-            Stock: ${productInfo.count}
-            Price: ${productInfo.price}
-          `,
-          TopicArn: process.env.SNS_ARN,
-          MessageAttributes: {
-            price: {
-              DataType: 'Number',
-              StringValue: productInfo.price,
-            }
-          }
-        }));*/
+
         console.log('sns queue publish completed');
     } catch (err) {
         throw new createError.InternalServerError();
